@@ -1,0 +1,16 @@
+# مخرجات البناء والملفات المؤقتة
+work/seg/
+work/fonts/
+work/book/__pycache__/
+work/__pycache__/
+__pycache__/
+*.pyc
+
+# ناتج البناء داخل work/ (النسخة النهائية في جذر المستودع)
+work/نظام-الطيبات-النسخة-الجديدة.pdf
+work/test_*.pdf
+work/test_*.py
+
+# لقطات المراجعة البصرية
+work/qa_*.png
+work/test_render.png
