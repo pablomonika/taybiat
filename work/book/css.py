@@ -104,11 +104,12 @@ td.c, th.c { text-align: center; }
 .tblcap { font-family: 'kufi'; font-weight: 700; font-size: 10pt; color: #1d5b38; margin: 10pt 0 2pt 0; }
 
 /* جداول القوائم الغذائية (مدمجة لتحتل صفحة واحدة) */
-table.food { font-size: 8.5pt; margin: 4pt 0 5pt 0; line-height: 1.35; }
-table.food th { padding: 3.6pt 5pt; font-size: 8.2pt; }
-table.food td { padding: 2.9pt 5pt; line-height: 1.35; }
-table.food td.small { font-size: 8.1pt; line-height: 1.35; }
-h2.chap.foodcat { font-size: 13.5pt; margin: 6pt 0 1pt 0; padding-bottom: 3pt; }
+table.food { font-size: 8.3pt; margin: 3pt 0 4pt 0; line-height: 1.26; }
+table.food th { padding: 3pt 4pt; font-size: 8pt; }
+table.food td { padding: 2.1pt 4pt; line-height: 1.26; }
+table.food td.small { font-size: 7.9pt; line-height: 1.26; }
+h2.chap.foodcat { font-size: 13pt; margin: 4pt 0 1pt 0; padding-bottom: 3pt; }
+td.freq { padding: 2.1pt 3pt; font-size: 7.6pt; }
 
 /* خلايا التكرار والحالة الملوّنة */
 td.freq { text-align: center; font-family: 'kufi'; font-weight: 700; font-size: 8pt; color: #fff;
