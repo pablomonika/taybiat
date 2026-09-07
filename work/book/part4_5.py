@@ -19,7 +19,7 @@ def part4():
         for banned, allowed in group:
             h.append(f'<tr><td class="to">{allowed}</td><td class="from">{banned}</td></tr>')
         h.append('</tbody></table>')
-    h.append('<p class="src">المصدر: دليل البدائل الرسمي على altayebaat.com.</p>')
+    h.append('<p class="src">المصدر: دليل البدائل الرسمي لنظام الطيبات.</p>')
     h.append('</section>')
 
     h.append('<section class="pagebreak">')

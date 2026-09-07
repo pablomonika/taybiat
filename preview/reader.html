@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نظام الطيبات — معاينة</title><style>
+:root{--green:#123822;--gold:#c9a25e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,Tahoma,sans-serif;background:#e9ece8;color:#1c2a22}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:10px 18px;background:var(--green);color:#f4efe4;border-bottom:3px solid var(--gold)}
+header .t{font-weight:800;font-size:16px} header .t small{display:block;font-weight:500;font-size:11px;color:#bcd0c0;margin-top:2px}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.controls button,.controls a{font:inherit;font-weight:700;font-size:13px;cursor:pointer;border:0;border-radius:6px;padding:7px 12px;background:#e7eadf;color:var(--green);text-decoration:none}
+.controls a.dl{background:var(--gold);color:#241a05}
+.controls input{width:64px;padding:6px 8px;border-radius:6px;border:0;font:inherit;text-align:center}
+.reader{max-width:860px;margin:22px auto 60px;padding:0 12px}
+.page{background:#fff;margin:0 auto 26px;padding:10px;border-radius:4px;box-shadow:0 6px 22px rgba(0,0,0,.18)}
+.page img{width:100%;display:block}.page figcaption{text-align:center;font-size:12px;color:#7a8a7e;padding-top:8px;font-weight:700}
+body.spread .reader{max-width:1280px} body.spread .page{display:inline-block;width:48%;vertical-align:top;margin:0 .6% 22px}
+footer{text-align:center;color:#5c6b60;font-size:12px;padding:20px}
+</style></head><body>
+<header><div class="t">نظام الطيبات — الدليل الشامل<small>النسخة المعاد بناؤها · 102 صفحة · A5</small></div>
+<div class="controls">
+<button onclick="zoom(-.1)">−</button><span id="zl" style="font-size:12px;width:44px;text-align:center">100%</span>
+<button onclick="zoom(.1)">+</button><button onclick="document.body.classList.toggle('spread')">صفحتان</button>
+<input id="jump" type="number" min="1" max="102" placeholder="صفحة"><button onclick="go()">اذهب</button>
+<a class="dl" href="/download">⬇ تنزيل PDF</a></div></header>
+<main class="reader" id="reader">
+    <figure class="page" id="pg1"><img src="p/001.jpg" alt="صفحة 1" loading="lazy"><figcaption>1</figcaption></figure>
+    <figure class="page" id="pg2"><img src="p/002.jpg" alt="صفحة 2" loading="lazy"><figcaption>2</figcaption></figure>
+    <figure class="page" id="pg3"><img src="p/003.jpg" alt="صفحة 3" loading="lazy"><figcaption>3</figcaption></figure>
+    <figure class="page" id="pg4"><img src="p/004.jpg" alt="صفحة 4" loading="lazy"><figcaption>4</figcaption></figure>
+    <figure class="page" id="pg5"><img src="p/005.jpg" alt="صفحة 5" loading="lazy"><figcaption>5</figcaption></figure>
+    <figure class="page" id="pg6"><img src="p/006.jpg" alt="صفحة 6" loading="lazy"><figcaption>6</figcaption></figure>
+    <figure class="page" id="pg7"><img src="p/007.jpg" alt="صفحة 7" loading="lazy"><figcaption>7</figcaption></figure>
+    <figure class="page" id="pg8"><img src="p/008.jpg" alt="صفحة 8" loading="lazy"><figcaption>8</figcaption></figure>
+    <figure class="page" id="pg9"><img src="p/009.jpg" alt="صفحة 9" loading="lazy"><figcaption>9</figcaption></figure>
+    <figure class="page" id="pg10"><img src="p/010.jpg" alt="صفحة 10" loading="lazy"><figcaption>10</figcaption></figure>
+    <figure class="page" id="pg11"><img src="p/011.jpg" alt="صفحة 11" loading="lazy"><figcaption>11</figcaption></figure>
+    <figure class="page" id="pg12"><img src="p/012.jpg" alt="صفحة 12" loading="lazy"><figcaption>12</figcaption></figure>
+    <figure class="page" id="pg13"><img src="p/013.jpg" alt="صفحة 13" loading="lazy"><figcaption>13</figcaption></figure>
+    <figure class="page" id="pg14"><img src="p/014.jpg" alt="صفحة 14" loading="lazy"><figcaption>14</figcaption></figure>
+    <figure class="page" id="pg15"><img src="p/015.jpg" alt="صفحة 15" loading="lazy"><figcaption>15</figcaption></figure>
+    <figure class="page" id="pg16"><img src="p/016.jpg" alt="صفحة 16" loading="lazy"><figcaption>16</figcaption></figure>
+    <figure class="page" id="pg17"><img src="p/017.jpg" alt="صفحة 17" loading="lazy"><figcaption>17</figcaption></figure>
+    <figure class="page" id="pg18"><img src="p/018.jpg" alt="صفحة 18" loading="lazy"><figcaption>18</figcaption></figure>
+    <figure class="page" id="pg19"><img src="p/019.jpg" alt="صفحة 19" loading="lazy"><figcaption>19</figcaption></figure>
+    <figure class="page" id="pg20"><img src="p/020.jpg" alt="صفحة 20" loading="lazy"><figcaption>20</figcaption></figure>
+    <figure class="page" id="pg21"><img src="p/021.jpg" alt="صفحة 21" loading="lazy"><figcaption>21</figcaption></figure>
+    <figure class="page" id="pg22"><img src="p/022.jpg" alt="صفحة 22" loading="lazy"><figcaption>22</figcaption></figure>
+    <figure class="page" id="pg23"><img src="p/023.jpg" alt="صفحة 23" loading="lazy"><figcaption>23</figcaption></figure>
+    <figure class="page" id="pg24"><img src="p/024.jpg" alt="صفحة 24" loading="lazy"><figcaption>24</figcaption></figure>
+    <figure class="page" id="pg25"><img src="p/025.jpg" alt="صفحة 25" loading="lazy"><figcaption>25</figcaption></figure>
+    <figure class="page" id="pg26"><img src="p/026.jpg" alt="صفحة 26" loading="lazy"><figcaption>26</figcaption></figure>
+    <figure class="page" id="pg27"><img src="p/027.jpg" alt="صفحة 27" loading="lazy"><figcaption>27</figcaption></figure>
+    <figure class="page" id="pg28"><img src="p/028.jpg" alt="صفحة 28" loading="lazy"><figcaption>28</figcaption></figure>
+    <figure class="page" id="pg29"><img src="p/029.jpg" alt="صفحة 29" loading="lazy"><figcaption>29</figcaption></figure>
+    <figure class="page" id="pg30"><img src="p/030.jpg" alt="صفحة 30" loading="lazy"><figcaption>30</figcaption></figure>
+    <figure class="page" id="pg31"><img src="p/031.jpg" alt="صفحة 31" loading="lazy"><figcaption>31</figcaption></figure>
+    <figure class="page" id="pg32"><img src="p/032.jpg" alt="صفحة 32" loading="lazy"><figcaption>32</figcaption></figure>
+    <figure class="page" id="pg33"><img src="p/033.jpg" alt="صفحة 33" loading="lazy"><figcaption>33</figcaption></figure>
+    <figure class="page" id="pg34"><img src="p/034.jpg" alt="صفحة 34" loading="lazy"><figcaption>34</figcaption></figure>
+    <figure class="page" id="pg35"><img src="p/035.jpg" alt="صفحة 35" loading="lazy"><figcaption>35</figcaption></figure>
+    <figure class="page" id="pg36"><img src="p/036.jpg" alt="صفحة 36" loading="lazy"><figcaption>36</figcaption></figure>
+    <figure class="page" id="pg37"><img src="p/037.jpg" alt="صفحة 37" loading="lazy"><figcaption>37</figcaption></figure>
+    <figure class="page" id="pg38"><img src="p/038.jpg" alt="صفحة 38" loading="lazy"><figcaption>38</figcaption></figure>
+    <figure class="page" id="pg39"><img src="p/039.jpg" alt="صفحة 39" loading="lazy"><figcaption>39</figcaption></figure>
+    <figure class="page" id="pg40"><img src="p/040.jpg" alt="صفحة 40" loading="lazy"><figcaption>40</figcaption></figure>
+    <figure class="page" id="pg41"><img src="p/041.jpg" alt="صفحة 41" loading="lazy"><figcaption>41</figcaption></figure>
+    <figure class="page" id="pg42"><img src="p/042.jpg" alt="صفحة 42" loading="lazy"><figcaption>42</figcaption></figure>
+    <figure class="page" id="pg43"><img src="p/043.jpg" alt="صفحة 43" loading="lazy"><figcaption>43</figcaption></figure>
+    <figure class="page" id="pg44"><img src="p/044.jpg" alt="صفحة 44" loading="lazy"><figcaption>44</figcaption></figure>
+    <figure class="page" id="pg45"><img src="p/045.jpg" alt="صفحة 45" loading="lazy"><figcaption>45</figcaption></figure>
+    <figure class="page" id="pg46"><img src="p/046.jpg" alt="صفحة 46" loading="lazy"><figcaption>46</figcaption></figure>
+    <figure class="page" id="pg47"><img src="p/047.jpg" alt="صفحة 47" loading="lazy"><figcaption>47</figcaption></figure>
+    <figure class="page" id="pg48"><img src="p/048.jpg" alt="صفحة 48" loading="lazy"><figcaption>48</figcaption></figure>
+    <figure class="page" id="pg49"><img src="p/049.jpg" alt="صفحة 49" loading="lazy"><figcaption>49</figcaption></figure>
+    <figure class="page" id="pg50"><img src="p/050.jpg" alt="صفحة 50" loading="lazy"><figcaption>50</figcaption></figure>
+    <figure class="page" id="pg51"><img src="p/051.jpg" alt="صفحة 51" loading="lazy"><figcaption>51</figcaption></figure>
+    <figure class="page" id="pg52"><img src="p/052.jpg" alt="صفحة 52" loading="lazy"><figcaption>52</figcaption></figure>
+    <figure class="page" id="pg53"><img src="p/053.jpg" alt="صفحة 53" loading="lazy"><figcaption>53</figcaption></figure>
+    <figure class="page" id="pg54"><img src="p/054.jpg" alt="صفحة 54" loading="lazy"><figcaption>54</figcaption></figure>
+    <figure class="page" id="pg55"><img src="p/055.jpg" alt="صفحة 55" loading="lazy"><figcaption>55</figcaption></figure>
+    <figure class="page" id="pg56"><img src="p/056.jpg" alt="صفحة 56" loading="lazy"><figcaption>56</figcaption></figure>
+    <figure class="page" id="pg57"><img src="p/057.jpg" alt="صفحة 57" loading="lazy"><figcaption>57</figcaption></figure>
+    <figure class="page" id="pg58"><img src="p/058.jpg" alt="صفحة 58" loading="lazy"><figcaption>58</figcaption></figure>
+    <figure class="page" id="pg59"><img src="p/059.jpg" alt="صفحة 59" loading="lazy"><figcaption>59</figcaption></figure>
+    <figure class="page" id="pg60"><img src="p/060.jpg" alt="صفحة 60" loading="lazy"><figcaption>60</figcaption></figure>
+    <figure class="page" id="pg61"><img src="p/061.jpg" alt="صفحة 61" loading="lazy"><figcaption>61</figcaption></figure>
+    <figure class="page" id="pg62"><img src="p/062.jpg" alt="صفحة 62" loading="lazy"><figcaption>62</figcaption></figure>
+    <figure class="page" id="pg63"><img src="p/063.jpg" alt="صفحة 63" loading="lazy"><figcaption>63</figcaption></figure>
+    <figure class="page" id="pg64"><img src="p/064.jpg" alt="صفحة 64" loading="lazy"><figcaption>64</figcaption></figure>
+    <figure class="page" id="pg65"><img src="p/065.jpg" alt="صفحة 65" loading="lazy"><figcaption>65</figcaption></figure>
+    <figure class="page" id="pg66"><img src="p/066.jpg" alt="صفحة 66" loading="lazy"><figcaption>66</figcaption></figure>
+    <figure class="page" id="pg67"><img src="p/067.jpg" alt="صفحة 67" loading="lazy"><figcaption>67</figcaption></figure>
+    <figure class="page" id="pg68"><img src="p/068.jpg" alt="صفحة 68" loading="lazy"><figcaption>68</figcaption></figure>
+    <figure class="page" id="pg69"><img src="p/069.jpg" alt="صفحة 69" loading="lazy"><figcaption>69</figcaption></figure>
+    <figure class="page" id="pg70"><img src="p/070.jpg" alt="صفحة 70" loading="lazy"><figcaption>70</figcaption></figure>
+    <figure class="page" id="pg71"><img src="p/071.jpg" alt="صفحة 71" loading="lazy"><figcaption>71</figcaption></figure>
+    <figure class="page" id="pg72"><img src="p/072.jpg" alt="صفحة 72" loading="lazy"><figcaption>72</figcaption></figure>
+    <figure class="page" id="pg73"><img src="p/073.jpg" alt="صفحة 73" loading="lazy"><figcaption>73</figcaption></figure>
+    <figure class="page" id="pg74"><img src="p/074.jpg" alt="صفحة 74" loading="lazy"><figcaption>74</figcaption></figure>
+    <figure class="page" id="pg75"><img src="p/075.jpg" alt="صفحة 75" loading="lazy"><figcaption>75</figcaption></figure>
+    <figure class="page" id="pg76"><img src="p/076.jpg" alt="صفحة 76" loading="lazy"><figcaption>76</figcaption></figure>
+    <figure class="page" id="pg77"><img src="p/077.jpg" alt="صفحة 77" loading="lazy"><figcaption>77</figcaption></figure>
+    <figure class="page" id="pg78"><img src="p/078.jpg" alt="صفحة 78" loading="lazy"><figcaption>78</figcaption></figure>
+    <figure class="page" id="pg79"><img src="p/079.jpg" alt="صفحة 79" loading="lazy"><figcaption>79</figcaption></figure>
+    <figure class="page" id="pg80"><img src="p/080.jpg" alt="صفحة 80" loading="lazy"><figcaption>80</figcaption></figure>
+    <figure class="page" id="pg81"><img src="p/081.jpg" alt="صفحة 81" loading="lazy"><figcaption>81</figcaption></figure>
+    <figure class="page" id="pg82"><img src="p/082.jpg" alt="صفحة 82" loading="lazy"><figcaption>82</figcaption></figure>
+    <figure class="page" id="pg83"><img src="p/083.jpg" alt="صفحة 83" loading="lazy"><figcaption>83</figcaption></figure>
+    <figure class="page" id="pg84"><img src="p/084.jpg" alt="صفحة 84" loading="lazy"><figcaption>84</figcaption></figure>
+    <figure class="page" id="pg85"><img src="p/085.jpg" alt="صفحة 85" loading="lazy"><figcaption>85</figcaption></figure>
+    <figure class="page" id="pg86"><img src="p/086.jpg" alt="صفحة 86" loading="lazy"><figcaption>86</figcaption></figure>
+    <figure class="page" id="pg87"><img src="p/087.jpg" alt="صفحة 87" loading="lazy"><figcaption>87</figcaption></figure>
+    <figure class="page" id="pg88"><img src="p/088.jpg" alt="صفحة 88" loading="lazy"><figcaption>88</figcaption></figure>
+    <figure class="page" id="pg89"><img src="p/089.jpg" alt="صفحة 89" loading="lazy"><figcaption>89</figcaption></figure>
+    <figure class="page" id="pg90"><img src="p/090.jpg" alt="صفحة 90" loading="lazy"><figcaption>90</figcaption></figure>
+    <figure class="page" id="pg91"><img src="p/091.jpg" alt="صفحة 91" loading="lazy"><figcaption>91</figcaption></figure>
+    <figure class="page" id="pg92"><img src="p/092.jpg" alt="صفحة 92" loading="lazy"><figcaption>92</figcaption></figure>
+    <figure class="page" id="pg93"><img src="p/093.jpg" alt="صفحة 93" loading="lazy"><figcaption>93</figcaption></figure>
+    <figure class="page" id="pg94"><img src="p/094.jpg" alt="صفحة 94" loading="lazy"><figcaption>94</figcaption></figure>
+    <figure class="page" id="pg95"><img src="p/095.jpg" alt="صفحة 95" loading="lazy"><figcaption>95</figcaption></figure>
+    <figure class="page" id="pg96"><img src="p/096.jpg" alt="صفحة 96" loading="lazy"><figcaption>96</figcaption></figure>
+    <figure class="page" id="pg97"><img src="p/097.jpg" alt="صفحة 97" loading="lazy"><figcaption>97</figcaption></figure>
+    <figure class="page" id="pg98"><img src="p/098.jpg" alt="صفحة 98" loading="lazy"><figcaption>98</figcaption></figure>
+    <figure class="page" id="pg99"><img src="p/099.jpg" alt="صفحة 99" loading="lazy"><figcaption>99</figcaption></figure>
+    <figure class="page" id="pg100"><img src="p/100.jpg" alt="صفحة 100" loading="lazy"><figcaption>100</figcaption></figure>
+    <figure class="page" id="pg101"><img src="p/101.jpg" alt="صفحة 101" loading="lazy"><figcaption>101</figcaption></figure>
+    <figure class="page" id="pg102"><img src="p/102.jpg" alt="صفحة 102" loading="lazy"><figcaption>102</figcaption></figure>
+</main><footer>عرض تفاعلي للكتاب كاملاً — زر «تنزيل PDF» للحصول على النسخة الجاهزة للطباعة.</footer>
+<script>
+let z=1;function zoom(d){z=Math.min(1.6,Math.max(.5,z+d));document.getElementById('reader').style.zoom=z;document.getElementById('zl').textContent=Math.round(z*100)+'%';}
+function go(){const n=parseInt(document.getElementById('jump').value,10);if(n>=1&&n<=102)document.getElementById('pg'+n).scrollIntoView({behavior:'smooth'});}
+</script></body></html>

@@ -77,8 +77,10 @@ def back_cover(path, arch):
         'محتواه مستخرج من قاعدة البيانات الرسمية، ويُصرَّح بمشاركته ونشره دون تعديل '
         'ابتغاءَ الأجر وخدمةً للناس. والموقع الرسمي هو المرجع المحدَّث دائماً.</div>', arch)
 
-    _tb(page, pymupdf.Rect(52, 330, r.width-52, 375),
-        '<div style="text-align:center;font-family:kufi;font-size:14pt;color:rgb(201,162,94);direction:rtl;">altayebaat.com</div>', arch)
+    # فاصل ذهبي زخرفي بدل اسم الموقع
+    cx = r.width/2
+    page.draw_rect(pymupdf.Rect(cx-36, 350, cx+36, 352.4), color=GOLD, fill=GOLD)
+    page.draw_rect(pymupdf.Rect(cx-4, 348, cx+4, 354.4), color=GOLD, fill=GOLD)
 
     _tb(page, pymupdf.Rect(52, 420, r.width-52, 480),
         '<div style="text-align:center;font-family:naskh;font-size:9.5pt;color:rgb(180,195,182);direction:rtl;line-height:1.9;">'
@@ -103,7 +105,7 @@ def title_page(path, arch):
         '<div style="text-align:center;font-family:kufi;font-size:13pt;color:rgb(154,125,52);direction:rtl;">الدليل الشامل للغذاء الصحّي الطبيعي</div>', arch)
     page.draw_rect(pymupdf.Rect(cx-34, 330, cx+34, 332), color=GOLD, fill=GOLD)
     _tb(page, pymupdf.Rect(44, 350, r.width-44, 420),
-        '<div style="text-align:center;font-family:naskh;font-size:11pt;color:rgb(40,55,46);direction:rtl;line-height:2;">إعداد وتوثيق<br><b>من قاعدة البيانات الرسمية لموقع altayebaat.com</b><br>تخليداً لعلم الدكتور ضياء العوضي (رحمه الله)</div>', arch)
+        '<div style="text-align:center;font-family:naskh;font-size:11pt;color:rgb(40,55,46);direction:rtl;line-height:2;">إعداد وتوثيق<br><b>من القوائم الرسمية لنظام الطيبات</b><br>تخليداً لعلم الدكتور ضياء العوضي (رحمه الله)</div>', arch)
     _tb(page, pymupdf.Rect(44, 500, r.width-44, 530),
         '<div style="text-align:center;font-family:kufim;font-size:10pt;color:rgb(90,105,96);direction:rtl;">الطبعة الإلكترونية الثانية — 1447 هـ / 2026 م</div>', arch)
     doc.save(path)
@@ -116,15 +118,15 @@ def copyright_page(path, arch):
     html = (
       '<div style="font-family:naskh;font-size:9.5pt;color:rgb(60,72,64);direction:rtl;line-height:2.1;">'
       '<p style="text-align:center;font-family:kufi;font-size:11pt;color:rgb(18,56,34);"><b>حقوق النشر والمشاركة</b></p>'
-      '<p>هذا الكتاب مُستخرَج بالكامل من قاعدة بيانات الموقع الرسمي altayebaat.com، '
+      '<p>هذا الكتاب مُستخرَج بالكامل من القوائم الرسمية الموثّقة لنظام الطيبات، '
       'وليس من تأليف أو اجتهاد شخصي. وهو توثيقٌ لعلم الدكتور ضياء العوضي (رحمه الله).</p>'
       '<p><b>يُصرَّح بمشاركة هذا الكتاب ونشره بحرية تامة دون تعديل</b>، ابتغاءَ الأجر للدكتور رحمه الله وخدمةً للناس. '
-      'جميع المحتويات مأخوذة من المصادر الرسمية الموثّقة، ويُنصَح بمتابعة الموقع للاطلاع على التحديثات المستمرة.</p>'
+      'جميع المحتويات مأخوذة من المصادر الرسمية الموثّقة، ويُنصَح بمراجعتها للاطلاع على التحديثات المستمرة.</p>'
       '<p style="color:rgb(179,50,42);"><b>تنبيه طبي:</b> هذا الدليل تعريفي تثقيفي يعرض رؤية الدكتور ضياء العوضي، '
       'ولا يُعدّ بديلاً عن مراجعة الطبيب المختص. علم التغذية الحديث يختلف مع النظام في بعض نقاطه. '
       'لا توقف أي دواء مزمن ولا تعدّل جرعاته دون استشارة طبيبك.</p>'
       '<p style="text-align:center;color:rgb(120,135,124);font-size:8.5pt;margin-top:18pt;">'
-      'الطبعة الإلكترونية الثانية — 1447 هـ / 2026 م<br>altayebaat.com</p>'
+      'الطبعة الإلكترونية الثانية — 1447 هـ / 2026 م</p>'
       '</div>'
     )
     _tb(page, pymupdf.Rect(56, 150, r.width-56, 430), html, arch)

@@ -34,7 +34,7 @@ def part3():
     ]
     h.append(box("key", "المبدأ الأساسي",
       "<p>Whitelist Only — كل ما هو خارج قائمة المسموحات ممنوع تلقائياً.</p>"))
-    h.append('<p class="src">المصدر: altayebaat.com/articles — قائمة الممنوعات الكاملة (محدَّثة 1 مايو 2026).</p>')
+    h.append('<p class="src">المصدر: قائمة الممنوعات الرسمية المحدَّثة لنظام الطيبات (1 مايو 2026).</p>')
     h.append(overview_table(overview, "#b3322a"))
     h.append('</section>')
 

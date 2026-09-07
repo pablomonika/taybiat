@@ -14,3 +14,5 @@ work/test_*.py
 # لقطات المراجعة البصرية
 work/qa_*.png
 work/test_render.png
+preview/p/
+preview/book.pdf

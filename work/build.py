@@ -272,10 +272,10 @@ def add_outline_and_meta(doc, entries, body_start):
     doc.set_toc(toc)
     doc.set_metadata({
         "title": "نظام الطيبات — الدليل الشامل للغذاء الصحّي الطبيعي",
-        "author": "عن رؤى الدكتور ضياء العوضي (1980–2026) — توثيق altayebaat.com",
+        "author": "عن رؤى الدكتور ضياء العوضي (1980–2026)",
         "subject": "نظام غذائي فلسفي علمي — نسخة معاد بناؤها تحريرياً وتصميمياً",
-        "keywords": "نظام الطيبات, ضياء العوضي, تغذية, altayebaat.com",
-        "creator": "altayebaat.com",
+        "keywords": "نظام الطيبات, ضياء العوضي, تغذية, غذاء صحي",
+        "creator": "نظام الطيبات",
     })
     print("outline entries:", len(toc), flush=True)
 
